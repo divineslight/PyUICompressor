@@ -1,0 +1,15 @@
+[
+	{
+		"name" : "additback_base",
+		"baseroot" : "/home/black/work/aibpublisher/static/additback/",
+		"jsroot" : "",
+		"cssroot" : "css/themes/",
+		"outroot" : "/home/black/work/additback_cdn/",
+
+		"chores" :
+		{
+			"additback-min.js" : ["base/base.js", "vendor/LAB.src.js", "base/additback.boot.js", "badge/additback.badge.js"],
+			"styles.css" : ["default.css"]
+		}
+	}
+]

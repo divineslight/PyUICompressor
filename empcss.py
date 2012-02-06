@@ -1,0 +1,2 @@
+def work(chore):
+	return
