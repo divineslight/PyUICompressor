@@ -21,6 +21,7 @@ def startjob(job):
 	Config.jsroot = job['jsroot']
 	Config.cssroot = job['cssroot']
 	Config.outroot = job['outroot']
+	Config.yui_params = job.get('yui_params', [])
 
 	for chore in job['chores']:
 		workchore(chore)
@@ -29,7 +30,7 @@ def startjob(job):
 
 
 def workchore(chore):
-	print "Working on chore", chore, "\n\n"
+	print "Working on chore", chore
 
 	fileExtension = os.path.splitext(chore)[1]
 	directory = Config.jsroot
@@ -45,9 +46,10 @@ def workchore(chore):
 	inputsStr = "temp"+fileExtension
 
 	yuibin = "./yuicompressor-2.4.7.jar"
-	basecmd = "java -jar " + yuibin + " -o " + Config.outroot + chore + " "
+	basecmd = "java -jar " + yuibin + " " + (" ".join(Config.yui_params)) + " -o " + Config.outroot + chore + " "
 	cmd = basecmd + inputsStr
 
-	print "Running command: ", cmd, "\n\n"
+	print "Running command: ", cmd
 	os.system(cmd)
+	print "============= Complete ================"
 	return

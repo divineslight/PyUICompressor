@@ -5,11 +5,15 @@
 		"jsroot" : "",
 		"cssroot" : "css/themes/",
 		"outroot" : "/home/black/work/additback_cdn/",
+		"yui_params": [],
 
 		"chores" :
 		{
 			"additback-min.js" : ["base/base.js", "vendor/LAB.src.js", "base/additback.boot.js", "badge/additback.badge.js"],
-			"styles.css" : ["default.css"]
+			"additback-modal-min.js" : ["modal/additback.modal.js"],
+			"additback-core-min.js": ["base/additback.url.js", "vendor/mustache.js", "base/additback.base64.js", "base/commons.js"],
+			"additback-modal-specific-min.js": ["vendor/jquery.mousewheel.js", "vendor/jquery.jscrollpane.js", "html/modal_default/modal.js"],
+			"default.styles.css" : ["default.css", "default/jquery.jscrollpane.css"]
 		}
 	}
 ]
